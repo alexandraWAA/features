@@ -1,9 +1,7 @@
-from typing import Any
-
 card_number = str(input())
 
 
-def get_mask_card_number(arg: Any) -> str:
+def get_mask_card_number(card_number):
     """Функцию маскировки номера банковской карты"""
     new_card_number = ""
     number_part1 = ""
@@ -22,7 +20,7 @@ def get_mask_card_number(arg: Any) -> str:
     return new_card_number
 
 
-def get_mask_account(arg: Any) -> str:
+def get_mask_account(card_number):
     """Функцию маскировки номера банковского счета"""
     new_card_number = ""
     number_part = ""
