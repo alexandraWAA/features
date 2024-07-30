@@ -18,4 +18,11 @@ def mask_account_card(arg: Any) -> str:
     return new_card
 
 
+def get_date(d: str) -> str:
+    date_time = d.split("T")[0]
+    d_time = f"{date_time[-2:]}.{date_time[5:7]}.{date_time[:4]}"
+    return d_time
+
+
 mask_account_card(card_number)
+get_date("2024-03-11T02:26:18.671407")
