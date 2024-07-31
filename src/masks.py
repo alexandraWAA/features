@@ -1,6 +1,3 @@
-card_number = str(input())
-
-
 def get_mask_card_number(card_number):
     """Функцию маскировки номера банковской карты"""
     new_card_number = ""
@@ -29,7 +26,3 @@ def get_mask_account(card_number):
         number_part += el
     new_card_number = "**" + number_part
     return new_card_number
-
-
-print(get_mask_card_number(card_number))
-print(get_mask_account(card_number))
