@@ -6,7 +6,7 @@ def get_mask_card_number(card_number: str) -> str:
     number_part3 = ""
     card_number_new = card_number.replace(" ", "")
 
-    if 20>=len(card_number_new) >= 16 and card_number_new.isdigit:
+    if 20 >= len(card_number_new) >= 16 and card_number_new.isdigit:
         for el in card_number_new[:4]:
             number_part1 += el
         new_card_number += number_part1 + " "

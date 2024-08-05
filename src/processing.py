@@ -1,8 +1,8 @@
-def filter_by_state(dictionary = [], state="EXECUTED") -> [dict]:
+def filter_by_state(dictionary: list[dict[str]], state="EXECUTED") -> list[dict[str]]:
     """Функция формирования нового списка словарей по ключевому слову"""
     new_dictionary = []
     for el in dictionary:
-        if state == None or state == "" or state == " ":
+        if state is None or state == "" or state == " ":
             print("Введите корректное state")
         elif el.get("state") == state:
             new_dictionary.append(el)
@@ -12,5 +12,5 @@ def filter_by_state(dictionary = [], state="EXECUTED") -> [dict]:
 
 def sort_by_date(dictionary: list[dict[str]], a=True) -> list[dict[str]]:
     """Функция формирования нового списка, отсортированных по дате"""
-    sorted_dict = sorted(dictionary, key=lambda d: (d["date"].year, d["date"].month, d["date"].day), reverse=a)
+    sorted_dict = sorted(dictionary, key=lambda d: d["date"], reverse=a)
     return sorted_dict
