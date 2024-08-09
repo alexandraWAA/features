@@ -113,7 +113,7 @@ transactions = [
 )
 def test_filter_by_currency(bill, expected):
 
-    assert filter_by_currency(transactions, bill) == expected
+    assert next(filter_by_currency(transactions, bill)) == expected
 
 
 def test_transaction_descriptions():
@@ -124,16 +124,16 @@ def test_transaction_descriptions():
         ("Перевод с карты на карту", "Перевод со счета на счет"),
         "",
     ]
-    assert transaction_descriptions(transactions) == expected
+    assert next(transaction_descriptions(transactions)) == expected
 
 
 def test_card_number_generator():
-    assert card_number_generator(9999999999999998, 9999999999999999) == "\n".join(
+    assert next(card_number_generator(9999999999999998, 9999999999999999)) == "\n".join(
         ["9999 9999 9999 9998", "9999 9999 9999 9999"]
     )
-    assert card_number_generator(0, 2) == "\n".join(
+    assert next(card_number_generator(0, 2)) == "\n".join(
         ["0000 0000 0000 0000", "0000 0000 0000 0001", "0000 0000 0000 0002"]
     )
-    assert card_number_generator(1, 3) == "\n".join(
+    assert next(card_number_generator(1, 3)) == "\n".join(
         ["0000 0000 0000 0001", "0000 0000 0000 0002", "0000 0000 0000 0003"]
     )
